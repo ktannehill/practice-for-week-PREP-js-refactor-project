@@ -11,6 +11,9 @@ function plusFive(num) {
     return num + 5;
 }
 
+function plusTen(number) {
+    return number + 10;
+}
 
 /*
     Original:
@@ -29,6 +32,17 @@ function printFives(max) {
     }
 }
 
+function returnSevens(maximum) {
+
+    let sevensArr = [];
+
+    for (let i = 0; i < maximum; i+=1) {
+        if (i % 7 === 0) {
+            sevensArr.push(i);
+        }
+    }
+    return sevensArr;
+}
 
 /*
     Original:
@@ -47,6 +61,9 @@ function eitherStringIncluded(sentence, word1, word2) {
     return sentence.includes(word1) || sentence.includes(word2);
 }
 
+function bothStringsIncluded(sentence, word1, word2) {
+    return sentence.includes(word1) && sentence.includes(word2);
+}
 
 /*
     Original:
@@ -66,6 +83,13 @@ function sumArray(arr) {
     return sum;
 }
 
+function productArray(arr) {
+    let product = 1;
+    for (let i = 0; i < arr.length; i++) {
+        product *= arr[i];
+    }
+    return product;
+}
 
 /*
     Original:
@@ -80,6 +104,9 @@ function threeOrSeven(num) {
     return num % 3 === 0 || num % 7 === 0;
 }
 
+function fiveAndEleven(num) {
+    return num % 5 === 0 && num % 11 === 0; 
+}
 
 /*
     Original:
@@ -101,6 +128,21 @@ function countVowels(word) {
     return count;
 }
 
+function countConsonants(word) {
+    let count = 0;
+    for (i = 0; i < word.length; i++) {
+      let lett = word[i];
+        if (lett !== "a" 
+            && lett !== "e" 
+            && lett !== "i" 
+            && lett !== "o" 
+            && lett !== "u"
+            && lett !== " ") {
+            count ++;
+        }
+    }
+    return count;
+}
 
 /*
     Original:
@@ -122,6 +164,26 @@ function whisper(str) {
     return str.toLowerCase();
 }
 
+function alternatingLetters(string) {
+  
+  let stringArr = [];
+  let char = string.split('');
+  //console.log(char);
+  
+  for (i = 0; i < char.length; i++) {
+    
+    if (i % 2 === 0) {
+      stringArr.push(char[i].toLowerCase());
+    } else {
+        stringArr.push(char[i].toUpperCase());
+      }
+    //console.log(stringArr);
+
+  }
+    return stringArr.join('');
+}
+
+console.log(alternatingLetters("hello"));
 
 module.exports = {
     plusTen,
